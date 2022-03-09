@@ -13,6 +13,63 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get(
+    '/',
+    [
+        'uses' => 'StudentController@index',
+                'as' => 'student.index'
+    ]
+);
+Route::prefix('student')->group(
+    function () {
+        Route::get(
+            '/data',
+            [
+                'uses' => 'StudentController@data',
+                'as' => 'student.data'
+            ]
+        );
+        Route::get(
+            '/',
+            [
+                'uses' => 'StudentController@index',
+                'as' => 'student.index'
+            ]
+        );
+        Route::get(
+            '/create',
+            [
+                'uses' => 'StudentController@create',
+                'as' => 'student.create'
+            ]
+        );
+        Route::post(
+            '/store',
+            [
+                'uses' => 'StudentController@store',
+                'as' => 'student.store'
+            ]
+        );
+        Route::get(
+            '/{id}/edit',
+            [
+                'uses' => 'StudentController@edit',
+                'as' => 'student.edit'
+            ]
+        );
+        Route::post(
+            '/update/{id}',
+            [
+                'uses' => 'StudentController@update',
+                'as' => 'student.update'
+            ]
+        );
+        Route::get(
+            '/{id}/delete',
+            [
+                'uses' => 'StudentController@destroy',
+                'as' => 'student.destroy'
+            ]
+        );
+    }
+);
