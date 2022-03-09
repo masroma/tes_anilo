@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get(
     '/',
     [
-        'uses' => 'StudentController@index',
-                'as' => 'student.index'
+        'uses' => 'ScoreController@index',
+        'as' => 'score.index'
     ]
 );
 Route::prefix('student')->group(

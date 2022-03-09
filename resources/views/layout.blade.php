@@ -24,15 +24,15 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
           <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
             <li class="nav-item active">
-              <a class="nav-link" href="#"> Student<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{route('student.index')}}"> Student<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Subject</a>
+              <a class="nav-link" href="{{route('subject.index')}}">Subject</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link disabled">Score</a>
-            </li>
+                <a class="nav-link" href="{{route('score.index')}}">Score</a>
+              </li>
           </ul>
 
         </div>
